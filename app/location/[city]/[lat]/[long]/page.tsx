@@ -36,19 +36,30 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
 
   const dataToSend = cleanData(results, city);
 
-  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      weatherData: dataToSend,
-    }),
-  });
+  async function fetchData() {
+    try {
+      const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          weatherData: dataToSend,
+        }),
+      });
 
-  const GPTdata = await res.json();
+      const GPTdata = await res.json();
 
-  const { content } = GPTdata;
+      const { content } = GPTdata;
+
+      return content;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+
+  const content = await fetchData();
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
