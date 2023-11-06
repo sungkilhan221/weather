@@ -67,9 +67,11 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
             </p>
           </div>
 
-          <div className="m-2 mb-10">
-            <CalloutCard message={content || "Something wrong!"} />
-          </div>
+          {content ? (
+            <div className="m-2 mb-10">
+              <CalloutCard message={content || "Something wrong!"} />
+            </div>
+          ) : null}
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 m-2">
             <StatCard
