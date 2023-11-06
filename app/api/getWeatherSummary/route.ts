@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
   const data = response.choices[0].message;
 
-  console.log(data);
+  // console.log(data);
 
   return NextResponse.json(data);
 }
