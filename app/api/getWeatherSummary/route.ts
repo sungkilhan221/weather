@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
     // ${JSON.stringify(weatherData)}
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4",
       messages: [
         {
           role: "system",

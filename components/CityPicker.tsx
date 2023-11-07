@@ -102,6 +102,7 @@ function CityPicker() {
           <label htmlFor="country">Country</label>
         </div>
         <Select
+          instanceId={"country"}
           className="text-black"
           value={selectedCountry}
           onChange={handleSelectedCountry}
@@ -117,6 +118,7 @@ function CityPicker() {
               <label htmlFor="city">City</label>
             </div>
             <Select
+              instanceId={"city"}
               className="text-black"
               value={selectedCity}
               onChange={handleSelectedCity}
@@ -143,6 +145,7 @@ function CityPicker() {
             <label htmlFor="state">State</label>
           </div>
           <Select
+            instanceId={"state"}
             className="text-black"
             value={selectedState}
             onChange={handleSelectedState}
@@ -169,6 +172,7 @@ function CityPicker() {
             <label htmlFor="city">City</label>
           </div>
           <Select
+            instanceId={"city"}
             className="text-black"
             value={selectedCity}
             onChange={handleSelectedCity}
